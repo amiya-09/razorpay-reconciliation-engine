@@ -136,3 +136,14 @@ def test_overall_match_rate_reflects_a_realistic_not_perfect_dataset():
     # Sanity bounds: high (most records are clean-ish) but not suspiciously perfect.
     assert 0.5 <= lg_rate < 1.0
     assert 0.5 <= gb_rate < 1.0
+
+
+def test_reconciliation_result_summary_renders_both_joins_with_match_rates():
+    ledger, gateway, bank = _load_canonical_dataset()
+    result = run(ledger, gateway, bank)
+    text = result.summary()
+    assert "ledger <-> gateway (order_id)" in text
+    assert "gateway <-> bank (reference_id)" in text
+    assert "match_rate=" in text
+    assert "status:" in text
+    assert "tier:" in text

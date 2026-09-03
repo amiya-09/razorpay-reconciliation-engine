@@ -113,3 +113,37 @@ def test_build_report_handles_no_client_gracefully():
     report = build_report(ledger_vs_gateway=[matched()], gateway_vs_bank=[], lg_augmented=[AIAugmentedResult(match_result=matched())], gb_augmented=[], client=None)
     assert report.ai_usage["calls"] == 0
     assert report.exceptions == []
+
+
+def test_exception_falls_back_to_ambiguous_decision_when_no_explanation_was_generated():
+    # A caller constructed an AIAugmentedResult with only a rejected decision
+    # and never called explain_exception — the pipeline always does both in
+    # practice, but build_exceptions must still degrade gracefully here.
+    result = GroupMatchResult(left=(txn("l1"),), right=(txn("r1"),), status=MatchStatus.NEAR_MISS, tier=MatchTier.FUZZY, confidence=0.4)
+    decision = AmbiguousMatchDecision(match=False, confidence=0.65, reasoning="dates too far apart", suspected_trap_category="date_timezone_offset")
+    augmented = AIAugmentedResult(match_result=result, ambiguous_decision=decision, exception_explanation=None)
+    [exc] = build_exceptions("j", [augmented])
+    assert exc.category == "date_timezone_offset"
+    assert exc.explanation == "dates too far apart"
+    assert exc.confidence == 0.65
+
+
+def test_render_text_includes_consistency_check_when_present():
+    report = build_report(
+        ledger_vs_gateway=[matched()], gateway_vs_bank=[],
+        lg_augmented=[AIAugmentedResult(match_result=matched())], gb_augmented=[],
+        client=None, consistency={"n": 5, "agreement_rate": 1.0},
+    )
+    text = report.render_text()
+    assert "AI consistency check:" in text
+    assert "agreement_rate" in text
+
+
+def test_render_text_shows_none_when_no_exceptions():
+    report = build_report(
+        ledger_vs_gateway=[matched()], gateway_vs_bank=[],
+        lg_augmented=[AIAugmentedResult(match_result=matched())], gb_augmented=[], client=None,
+    )
+    text = report.render_text()
+    assert "Exceptions (0)" in text
+    assert "(none)" in text

@@ -113,3 +113,11 @@ def test_answer_question_with_no_grounding_still_returns_a_validated_answer():
     client = FakeReasoningClient(responder=lambda s, u, f: answer)
     result = answer_question("what's the weather like?", index, client)
     assert result.cited_record_ids == []
+
+
+def test_find_by_identifier_matches_a_bare_source_record_id_directly():
+    # "led_order_00041" is the ledger row's own source_record_id, not reachable
+    # via the order_id/reference_id dictionaries — exercises the direct lookup.
+    index = build_index()
+    matches = index.find_by_identifier("led_order_00041")
+    assert any(t.source_record_id == "led_order_00041" for t in matches)

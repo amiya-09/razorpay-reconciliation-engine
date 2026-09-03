@@ -1,6 +1,7 @@
+import json
 from decimal import Decimal
 
-from reconciliation.dataset.generator import DEFAULT_SEED, generate_dataset
+from reconciliation.dataset.generator import DEFAULT_SEED, describe_mix, generate_dataset, write_dataset
 from reconciliation.loaders import bank_settlement, gateway_report, internal_ledger
 from reconciliation.models import TrapCategory
 
@@ -127,6 +128,19 @@ def test_genuinely_unmatched_rows_have_no_counterpart_in_other_sources():
 
 
 def _to_json(rows: list[dict]) -> str:
-    import json
-
     return json.dumps(rows)
+
+
+def test_describe_mix_reports_total_and_per_category_breakdown():
+    ledger, gateway, bank = generate_dataset()
+    text = describe_mix(ledger, gateway, bank)
+    assert "Total records:" in text
+    assert "clean_exact_match" in text
+
+
+def test_write_dataset_creates_the_three_expected_files(tmp_path):
+    write_dataset(tmp_path, seed=DEFAULT_SEED)
+    for name in ("internal_ledger.json", "bank_settlement.json", "gateway_report.json"):
+        assert (tmp_path / name).exists()
+    ledger, gateway, bank = generate_dataset(seed=DEFAULT_SEED)
+    assert json.loads((tmp_path / "internal_ledger.json").read_text()) == ledger
