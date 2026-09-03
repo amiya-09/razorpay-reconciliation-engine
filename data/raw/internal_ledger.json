@@ -1,0 +1,515 @@
+[
+  {
+    "ledger_id": "led_00025",
+    "order_id": "order_00025",
+    "amount": "46849.16",
+    "currency": "INR",
+    "created_at": "2026-01-07T15:08:02",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00046",
+    "order_id": "order_00046",
+    "amount": "27536.86",
+    "currency": "INR",
+    "created_at": "2026-01-08T10:17:56",
+    "status": "captured",
+    "trap_category": "currency_rounding"
+  },
+  {
+    "ledger_id": "led_00008",
+    "order_id": "order_00008",
+    "amount": "43242.16",
+    "currency": "INR",
+    "created_at": "2026-01-12T10:48:03",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00019",
+    "order_id": "order_00019",
+    "amount": "43099.74",
+    "currency": "INR",
+    "created_at": "2026-01-06T11:04:38",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00024",
+    "order_id": "order_00024",
+    "amount": "11473.94",
+    "currency": "INR",
+    "created_at": "2026-01-15T13:10:47",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00035",
+    "order_id": "order_00035",
+    "amount": "45811.25",
+    "currency": "INR",
+    "created_at": "2026-01-06T13:15:17",
+    "status": "captured",
+    "trap_category": "netted_settlement"
+  },
+  {
+    "ledger_id": "led_00036",
+    "order_id": "order_00036",
+    "amount": "35744.19",
+    "currency": "INR",
+    "created_at": "2026-01-12T15:03:13",
+    "status": "captured",
+    "trap_category": "netted_settlement"
+  },
+  {
+    "ledger_id": "led_00001",
+    "order_id": "order_00001",
+    "amount": "9839.12",
+    "currency": "INR",
+    "created_at": "2026-01-05T13:15:14",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00009",
+    "order_id": "order_00009",
+    "amount": "46907.95",
+    "currency": "INR",
+    "created_at": "2026-01-05T19:46:07",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00007",
+    "order_id": "order_00007",
+    "amount": "33688.00",
+    "currency": "INR",
+    "created_at": "2026-01-15T16:09:16",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00020",
+    "order_id": "order_00020",
+    "amount": "49461.98",
+    "currency": "INR",
+    "created_at": "2026-01-14T17:20:59",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00052",
+    "order_id": "order_00052",
+    "amount": "37449.20",
+    "currency": "INR",
+    "created_at": "2026-01-10T11:03:16",
+    "status": "voided",
+    "trap_category": "genuinely_unmatched"
+  },
+  {
+    "ledger_id": "led_00005",
+    "order_id": "order_00005",
+    "amount": "38534.81",
+    "currency": "INR",
+    "created_at": "2026-01-15T14:10:23",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00023",
+    "order_id": "order_00023",
+    "amount": "24135.42",
+    "currency": "INR",
+    "created_at": "2026-01-14T12:45:21",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00050",
+    "order_id": "order_00050",
+    "amount": "24239.65",
+    "currency": "INR",
+    "created_at": "2026-01-06T12:18:14",
+    "status": "captured",
+    "trap_category": "pending_on_hold"
+  },
+  {
+    "ledger_id": "led_00047",
+    "order_id": "order_00047",
+    "amount": "30264.87",
+    "currency": "INR",
+    "created_at": "2026-01-09T14:17:56",
+    "status": "captured",
+    "trap_category": "currency_rounding"
+  },
+  {
+    "ledger_id": "led_00043",
+    "order_id": "order_00043",
+    "amount": "39509.87",
+    "currency": "INR",
+    "created_at": "2026-01-09T14:10:38",
+    "status": "captured",
+    "trap_category": "reference_id_typo"
+  },
+  {
+    "ledger_id": "led_00013",
+    "order_id": "order_00013",
+    "amount": "21295.83",
+    "currency": "INR",
+    "created_at": "2026-01-08T10:21:01",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00010",
+    "order_id": "order_00010",
+    "amount": "43087.42",
+    "currency": "INR",
+    "created_at": "2026-01-06T19:19:53",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00030",
+    "order_id": "order_00030",
+    "amount": "26833.15",
+    "currency": "INR",
+    "created_at": "2026-01-15T10:46:57",
+    "status": "captured",
+    "trap_category": "split_transaction"
+  },
+  {
+    "ledger_id": "led_00033",
+    "order_id": "order_00033",
+    "amount": "28672.93",
+    "currency": "INR",
+    "created_at": "2026-01-06T13:15:17",
+    "status": "captured",
+    "trap_category": "netted_settlement"
+  },
+  {
+    "ledger_id": "led_00026",
+    "order_id": "order_00026",
+    "amount": "20358.96",
+    "currency": "INR",
+    "created_at": "2026-01-07T11:56:26",
+    "status": "captured",
+    "trap_category": "fee_deduction"
+  },
+  {
+    "ledger_id": "led_00053",
+    "order_id": "order_00053",
+    "amount": "40574.82",
+    "currency": "INR",
+    "created_at": "2026-01-06T10:25:31",
+    "status": "voided",
+    "trap_category": "genuinely_unmatched"
+  },
+  {
+    "ledger_id": "led_00004",
+    "order_id": "order_00004",
+    "amount": "25093.57",
+    "currency": "INR",
+    "created_at": "2026-01-15T18:56:55",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00022",
+    "order_id": "order_00022",
+    "amount": "46068.42",
+    "currency": "INR",
+    "created_at": "2026-01-09T18:51:41",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00027",
+    "order_id": "order_00027",
+    "amount": "17241.38",
+    "currency": "INR",
+    "created_at": "2026-01-12T14:19:52",
+    "status": "captured",
+    "trap_category": "fee_deduction"
+  },
+  {
+    "ledger_id": "led_00011",
+    "order_id": "order_00011",
+    "amount": "2133.82",
+    "currency": "INR",
+    "created_at": "2026-01-06T14:56:53",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00014",
+    "order_id": "order_00014",
+    "amount": "6443.94",
+    "currency": "INR",
+    "created_at": "2026-01-13T12:17:42",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00041",
+    "order_id": "order_00041",
+    "amount": "11883.29",
+    "currency": "INR",
+    "created_at": "2026-01-12T11:03:16",
+    "status": "captured",
+    "trap_category": "date_timezone_offset"
+  },
+  {
+    "ledger_id": "led_00016",
+    "order_id": "order_00016",
+    "amount": "38132.43",
+    "currency": "INR",
+    "created_at": "2026-01-07T15:11:17",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00040",
+    "order_id": "order_00040",
+    "amount": "33119.70",
+    "currency": "INR",
+    "created_at": "2026-01-10T19:43:51",
+    "status": "captured",
+    "trap_category": "date_timezone_offset"
+  },
+  {
+    "ledger_id": "led_00032",
+    "order_id": "order_00032",
+    "amount": "16810.40",
+    "currency": "INR",
+    "created_at": "2026-01-11T16:25:15",
+    "status": "captured",
+    "trap_category": "split_transaction"
+  },
+  {
+    "ledger_id": "led_00054",
+    "order_id": "order_00054",
+    "amount": "24667.98",
+    "currency": "INR",
+    "created_at": "2026-01-09T16:04:43",
+    "status": "captured",
+    "trap_category": "duplicate_record"
+  },
+  {
+    "ledger_id": "led_00051",
+    "order_id": "order_00051",
+    "amount": "1528.89",
+    "currency": "INR",
+    "created_at": "2026-01-14T13:30:30",
+    "status": "voided",
+    "trap_category": "genuinely_unmatched"
+  },
+  {
+    "ledger_id": "led_00042",
+    "order_id": "order_00042",
+    "amount": "4869.25",
+    "currency": "INR",
+    "created_at": "2026-01-10T12:41:04",
+    "status": "captured",
+    "trap_category": "reference_id_typo"
+  },
+  {
+    "ledger_id": "led_00029",
+    "order_id": "order_00029",
+    "amount": "43401.27",
+    "currency": "INR",
+    "created_at": "2026-01-06T15:57:36",
+    "status": "captured",
+    "trap_category": "fee_deduction"
+  },
+  {
+    "ledger_id": "led_00034",
+    "order_id": "order_00034",
+    "amount": "27319.18",
+    "currency": "INR",
+    "created_at": "2026-01-06T13:15:17",
+    "status": "captured",
+    "trap_category": "netted_settlement"
+  },
+  {
+    "ledger_id": "led_00031",
+    "order_id": "order_00031",
+    "amount": "27532.22",
+    "currency": "INR",
+    "created_at": "2026-01-12T16:28:43",
+    "status": "captured",
+    "trap_category": "split_transaction"
+  },
+  {
+    "ledger_id": "led_00012",
+    "order_id": "order_00012",
+    "amount": "40369.57",
+    "currency": "INR",
+    "created_at": "2026-01-13T11:16:33",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00055",
+    "order_id": "order_00054",
+    "amount": "24667.98",
+    "currency": "INR",
+    "created_at": "2026-01-09T16:04:43",
+    "status": "captured",
+    "trap_category": "duplicate_record"
+  },
+  {
+    "ledger_id": "led_00045",
+    "order_id": "order_00045",
+    "amount": "41621.09",
+    "currency": "INR",
+    "created_at": "2026-01-06T15:23:40",
+    "status": "captured",
+    "trap_category": "reference_id_typo"
+  },
+  {
+    "ledger_id": "led_00018",
+    "order_id": "order_00018",
+    "amount": "13485.29",
+    "currency": "INR",
+    "created_at": "2026-01-08T13:13:03",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00049",
+    "order_id": "order_00049",
+    "amount": "38562.91",
+    "currency": "INR",
+    "created_at": "2026-01-09T13:16:14",
+    "status": "captured",
+    "trap_category": "pending_on_hold"
+  },
+  {
+    "ledger_id": "led_00038",
+    "order_id": "order_00038",
+    "amount": "49496.13",
+    "currency": "INR",
+    "created_at": "2026-01-12T15:03:13",
+    "status": "captured",
+    "trap_category": "netted_settlement"
+  },
+  {
+    "ledger_id": "led_00037",
+    "order_id": "order_00037",
+    "amount": "33171.68",
+    "currency": "INR",
+    "created_at": "2026-01-12T15:03:13",
+    "status": "captured",
+    "trap_category": "netted_settlement"
+  },
+  {
+    "ledger_id": "led_00044",
+    "order_id": "order_00044",
+    "amount": "20871.68",
+    "currency": "INR",
+    "created_at": "2026-01-06T13:54:43",
+    "status": "captured",
+    "trap_category": "reference_id_typo"
+  },
+  {
+    "ledger_id": "led_00015",
+    "order_id": "order_00015",
+    "amount": "8631.14",
+    "currency": "INR",
+    "created_at": "2026-01-15T15:22:27",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00057",
+    "order_id": "order_00055",
+    "amount": "5502.80",
+    "currency": "INR",
+    "created_at": "2026-01-07T13:38:47",
+    "status": "captured",
+    "trap_category": "duplicate_record"
+  },
+  {
+    "ledger_id": "led_00002",
+    "order_id": "order_00002",
+    "amount": "2725.99",
+    "currency": "INR",
+    "created_at": "2026-01-13T12:45:41",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00017",
+    "order_id": "order_00017",
+    "amount": "34592.48",
+    "currency": "INR",
+    "created_at": "2026-01-12T16:13:55",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00056",
+    "order_id": "order_00055",
+    "amount": "5502.80",
+    "currency": "INR",
+    "created_at": "2026-01-07T13:38:47",
+    "status": "captured",
+    "trap_category": "duplicate_record"
+  },
+  {
+    "ledger_id": "led_00021",
+    "order_id": "order_00021",
+    "amount": "38943.77",
+    "currency": "INR",
+    "created_at": "2026-01-14T18:06:04",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00048",
+    "order_id": "order_00048",
+    "amount": "41673.07",
+    "currency": "INR",
+    "created_at": "2026-01-12T09:05:18",
+    "status": "captured",
+    "trap_category": "pending_on_hold"
+  },
+  {
+    "ledger_id": "led_00028",
+    "order_id": "order_00028",
+    "amount": "45481.03",
+    "currency": "INR",
+    "created_at": "2026-01-10T09:07:56",
+    "status": "captured",
+    "trap_category": "fee_deduction"
+  },
+  {
+    "ledger_id": "led_00003",
+    "order_id": "order_00003",
+    "amount": "18561.82",
+    "currency": "INR",
+    "created_at": "2026-01-10T10:05:24",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "ledger_id": "led_00039",
+    "order_id": "order_00039",
+    "amount": "2138.45",
+    "currency": "INR",
+    "created_at": "2026-01-14T15:30:00",
+    "status": "captured",
+    "trap_category": "date_timezone_offset"
+  },
+  {
+    "ledger_id": "led_00006",
+    "order_id": "order_00006",
+    "amount": "47220.33",
+    "currency": "INR",
+    "created_at": "2026-01-08T19:20:53",
+    "status": "captured",
+    "trap_category": "clean_exact_match"
+  }
+]

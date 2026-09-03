@@ -1,0 +1,410 @@
+[
+  {
+    "bank_ref": "980500978820",
+    "amount": "13167.03",
+    "value_date": "2026-01-09T13:13:03",
+    "narration": "NEFT RAZORPAY order_00018",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "238849696532",
+    "amount": "32892.96",
+    "value_date": "2026-01-16T16:09:16",
+    "narration": "NEFT RAZORPAY order_00007",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "155940781618",
+    "amount": "18123.76",
+    "value_date": "2026-01-11T10:05:24",
+    "narration": "NEFT RAZORPAY order_00003",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "593103413164",
+    "amount": "24501.36",
+    "value_date": "2026-01-16T18:56:55",
+    "narration": "NEFT RAZORPAY order_00004",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "025634216073",
+    "amount": "18677.31",
+    "value_date": "2026-01-08T11:56:26",
+    "narration": "NEFT RAZORPAY order_00026",
+    "account_id": "acc_main",
+    "trap_category": "fee_deduction"
+  },
+  {
+    "bank_ref": "749649909133",
+    "amount": "19432.00",
+    "value_date": "2026-01-13T15:28:58",
+    "narration": "INTEREST CREDIT",
+    "account_id": "acc_main",
+    "trap_category": "genuinely_unmatched"
+  },
+  {
+    "bank_ref": "947174648877",
+    "amount": "5372.93",
+    "value_date": "2026-01-08T13:38:47",
+    "narration": "NEFT RAZORPAY order_00055",
+    "account_id": "acc_main",
+    "trap_category": "duplicate_record"
+  },
+  {
+    "bank_ref": "375564641708",
+    "amount": "11602.84",
+    "value_date": "2026-01-15T10:03:16",
+    "narration": "NEFT RAZORPAY order_00041",
+    "account_id": "acc_main",
+    "trap_category": "date_timezone_offset"
+  },
+  {
+    "bank_ref": "670106513338",
+    "amount": "8427.45",
+    "value_date": "2026-01-16T15:22:27",
+    "narration": "NEFT RAZORPAY order_00015",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "963834657871",
+    "amount": "39416.85",
+    "value_date": "2026-01-14T11:16:33",
+    "narration": "NEFT RAZORPAY order_00012",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "330365414586",
+    "amount": "15817.24",
+    "value_date": "2026-01-13T14:19:52",
+    "narration": "NEFT RAZORPAY order_00027",
+    "account_id": "acc_main",
+    "trap_category": "fee_deduction"
+  },
+  {
+    "bank_ref": "602606474687",
+    "amount": "33776.10",
+    "value_date": "2026-01-13T16:13:55",
+    "narration": "NEFT RAZORPAY order_00017",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "030564139537",
+    "amount": "46105.93",
+    "value_date": "2026-01-09T19:20:53",
+    "narration": "NEFT RAZORPAY order_00006",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "737996507527",
+    "amount": "26886.98",
+    "value_date": "2026-01-09T10:17:56",
+    "narration": "NEFT RAZORPAY order_00046",
+    "account_id": "acc_main",
+    "trap_category": "currency_rounding"
+  },
+  {
+    "bank_ref": "845146270482",
+    "amount": "45800.92",
+    "value_date": "2026-01-06T19:46:07",
+    "narration": "NEFT RAZORPAY order_00009",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "921419049663",
+    "amount": "38577.43",
+    "value_date": "2026-01-10T14:10:38",
+    "narration": "NEFT RAZORPAY order_00043",
+    "account_id": "acc_main",
+    "trap_category": "reference_id_typo"
+  },
+  {
+    "bank_ref": "786801128059",
+    "amount": "11203.15",
+    "value_date": "2026-01-16T13:10:47",
+    "narration": "NEFT RAZORPAY order_00024",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "948083136783",
+    "amount": "29550.67",
+    "value_date": "2026-01-10T14:17:56",
+    "narration": "NEFT RAZORPAY order_00047",
+    "account_id": "acc_main",
+    "trap_category": "currency_rounding"
+  },
+  {
+    "bank_ref": "534192832764",
+    "amount": "37625.38",
+    "value_date": "2026-01-16T14:10:23",
+    "narration": "NEFT RAZORPAY order_00005",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "332003791769",
+    "amount": "13441.23",
+    "value_date": "2026-01-13T16:28:43",
+    "narration": "NEFT RAZORPAY order_00031",
+    "account_id": "acc_main",
+    "trap_category": "split_transaction"
+  },
+  {
+    "bank_ref": "429401965569",
+    "amount": "41724.30",
+    "value_date": "2026-01-11T09:07:56",
+    "narration": "NEFT RAZORPAY order_00028",
+    "account_id": "acc_main",
+    "trap_category": "fee_deduction"
+  },
+  {
+    "bank_ref": "731781080132",
+    "amount": "37232.50",
+    "value_date": "2026-01-08T15:11:17",
+    "narration": "NEFT RAZORPAY order_00016",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "430391171822",
+    "amount": "2083.46",
+    "value_date": "2026-01-07T14:56:53",
+    "narration": "NEFT RAZORPAY order_00011",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "863794026542",
+    "amount": "2661.66",
+    "value_date": "2026-01-14T12:45:41",
+    "narration": "NEFT RAZORPAY order_00002",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "738299737631",
+    "amount": "6291.86",
+    "value_date": "2026-01-14T12:17:42",
+    "narration": "NEFT RAZORPAY order_00014",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "122362316658",
+    "amount": "115617.48",
+    "value_date": "2026-01-13T15:03:13",
+    "narration": "BATCH SETTLEMENT",
+    "account_id": "acc_main",
+    "trap_category": "netted_settlement"
+  },
+  {
+    "bank_ref": "201632870831",
+    "amount": "8206.84",
+    "value_date": "2026-01-12T16:25:15",
+    "narration": "NEFT RAZORPAY order_00032",
+    "account_id": "acc_main",
+    "trap_category": "split_transaction"
+  },
+  {
+    "bank_ref": "726248987769",
+    "amount": "40638.83",
+    "value_date": "2026-01-07T15:23:40",
+    "narration": "NEFT RAZORPAY order_00045",
+    "account_id": "acc_main",
+    "trap_category": "reference_id_typo"
+  },
+  {
+    "bank_ref": "349361832421",
+    "amount": "24085.82",
+    "value_date": "2026-01-10T16:04:43",
+    "narration": "NEFT RAZORPAY order_00054",
+    "account_id": "acc_main",
+    "trap_category": "duplicate_record"
+  },
+  {
+    "bank_ref": "122691669784",
+    "amount": "42221.65",
+    "value_date": "2026-01-13T10:48:03",
+    "narration": "NEFT RAZORPAY order_00008",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "272980699016",
+    "amount": "32338.08",
+    "value_date": "2026-01-14T00:43:51",
+    "narration": "NEFT RAZORPAY order_00040",
+    "account_id": "acc_main",
+    "trap_category": "date_timezone_offset"
+  },
+  {
+    "bank_ref": "983930103105",
+    "amount": "20793.24",
+    "value_date": "2026-01-09T10:21:01",
+    "narration": "NEFT RAZORPAY order_00013",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "838425135427",
+    "amount": "38024.69",
+    "value_date": "2026-01-15T18:06:04",
+    "narration": "NEFT RAZORPAY order_00021",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "484656482366",
+    "amount": "13099.94",
+    "value_date": "2026-01-16T10:46:57",
+    "narration": "NEFT RAZORPAY order_00030",
+    "account_id": "acc_main",
+    "trap_category": "split_transaction"
+  },
+  {
+    "bank_ref": "450533158692",
+    "amount": "45743.52",
+    "value_date": "2026-01-08T15:08:02",
+    "narration": "NEFT RAZORPAY order_00025",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "003302932719",
+    "amount": "4754.34",
+    "value_date": "2026-01-11T12:41:04",
+    "narration": "NEFT RAZORPAY order_00042",
+    "account_id": "acc_main",
+    "trap_category": "reference_id_typo"
+  },
+  {
+    "bank_ref": "727743487347",
+    "amount": "99400.81",
+    "value_date": "2026-01-07T13:15:17",
+    "narration": "BATCH SETTLEMENT",
+    "account_id": "acc_main",
+    "trap_category": "netted_settlement"
+  },
+  {
+    "bank_ref": "808412411824",
+    "amount": "44981.20",
+    "value_date": "2026-01-10T18:51:41",
+    "narration": "NEFT RAZORPAY order_00022",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "348740164005",
+    "amount": "23565.82",
+    "value_date": "2026-01-15T12:45:21",
+    "narration": "NEFT RAZORPAY order_00023",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "299468044369",
+    "amount": "13099.95",
+    "value_date": "2026-01-16T10:46:57",
+    "narration": "NEFT RAZORPAY order_00030",
+    "account_id": "acc_main",
+    "trap_category": "split_transaction"
+  },
+  {
+    "bank_ref": "727889579868",
+    "amount": "8206.84",
+    "value_date": "2026-01-12T16:25:15",
+    "narration": "NEFT RAZORPAY order_00032",
+    "account_id": "acc_main",
+    "trap_category": "split_transaction"
+  },
+  {
+    "bank_ref": "340608835615",
+    "amount": "39816.32",
+    "value_date": "2026-01-07T15:57:36",
+    "narration": "NEFT RAZORPAY order_00029",
+    "account_id": "acc_main",
+    "trap_category": "fee_deduction"
+  },
+  {
+    "bank_ref": "893252880957",
+    "amount": "42070.55",
+    "value_date": "2026-01-07T19:19:53",
+    "narration": "NEFT RAZORPAY order_00010",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "387214895134",
+    "amount": "13441.23",
+    "value_date": "2026-01-13T16:28:43",
+    "narration": "NEFT RAZORPAY order_00031",
+    "account_id": "acc_main",
+    "trap_category": "split_transaction"
+  },
+  {
+    "bank_ref": "919058561850",
+    "amount": "20379.11",
+    "value_date": "2026-01-07T13:54:43",
+    "narration": "NEFT RAZORPAY order_00044",
+    "account_id": "acc_main",
+    "trap_category": "reference_id_typo"
+  },
+  {
+    "bank_ref": "281206797403",
+    "amount": "22700.12",
+    "value_date": "2026-01-15T10:10:15",
+    "narration": "INTEREST CREDIT",
+    "account_id": "acc_main",
+    "trap_category": "genuinely_unmatched"
+  },
+  {
+    "bank_ref": "668893734670",
+    "amount": "2087.98",
+    "value_date": "2026-01-17T13:30:00",
+    "narration": "NEFT RAZORPAY order_00039",
+    "account_id": "acc_main",
+    "trap_category": "date_timezone_offset"
+  },
+  {
+    "bank_ref": "435346247510",
+    "amount": "48294.68",
+    "value_date": "2026-01-15T17:20:59",
+    "narration": "NEFT RAZORPAY order_00020",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "229413186999",
+    "amount": "6714.46",
+    "value_date": "2026-01-14T19:43:03",
+    "narration": "INTEREST CREDIT",
+    "account_id": "acc_main",
+    "trap_category": "genuinely_unmatched"
+  },
+  {
+    "bank_ref": "136193990916",
+    "amount": "42082.59",
+    "value_date": "2026-01-07T11:04:38",
+    "narration": "NEFT RAZORPAY order_00019",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  },
+  {
+    "bank_ref": "218196001338",
+    "amount": "9606.92",
+    "value_date": "2026-01-06T13:15:14",
+    "narration": "NEFT RAZORPAY order_00001",
+    "account_id": "acc_main",
+    "trap_category": "clean_exact_match"
+  }
+]
