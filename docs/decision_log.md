@@ -33,6 +33,7 @@ Format: Decision / Context / Alternatives / Reason / Trade-offs.
 - [D18](#d18--ai-reasoning-layer-backend-switched-from-anthropic-to-gemini-google-genai) — Anthropic → Gemini
 - [D19](#d19--live-api-debugging-on-the-gemini-backend-2-bugs-both-gemini-only-both-fixed-before-the-provider-swap) — 2 Gemini-only bugs (deprecated model, thinking-budget cutoff)
 - [D20](#d20--ai-reasoning-layer-backend-switched-again-gemini-to-groq--after-live-run-validation-surfaced-2-more-real-bugs) — Gemini → Groq; 2 Groq-only bugs + live-run results + per-provider bug attribution table
+- [D21](#d21--call_structured-gets-one-repair-retry-on-a-schema-invalid-generation) — one repair retry on a schema-invalid generation (partial success ≠ total failure)
 
 ---
 
@@ -657,3 +658,59 @@ from the `groq` SDK (OpenAI-compatible shape), parsing `response.choices[0].mess
 No bug occurred on both providers; none of the four were ever observed on Gemini and Groq alike. Bugs 1–2 were fully fixed on Gemini before the provider swap — the swap itself was for an unrelated reason (Gemini's free-tier *daily* quota, not these bugs).
 
 **Trade-offs:** `openai/gpt-oss-20b` is a smaller/faster model than what a paid tier of Gemini or a larger Groq model would offer; reasoning quality on the live run was good (specific, correctly-grounded explanations citing actual amounts/IDs/flags) but this is one project's worth of qualitative observation, not a benchmarked comparison — revisit the model choice if exception-explanation quality becomes a concern during the pitch/demo prep.
+
+---
+
+## D21 — `call_structured` gets one repair retry on a schema-invalid generation
+
+**Context:** A live demo-recording session hit `groq.BadRequestError` mid-run.
+Inspecting the failure: `match`, `confidence`, and `reasoning` were all
+correctly filled by the model, but `suspected_trap_category` was missing as
+its own field — the model had instead written the trap category as a phrase
+inside the `reasoning` text. Groq's strict JSON-schema mode rejected the
+whole generation as invalid rather than returning it with one field empty,
+and the previous `call_structured` treated this exactly like every other
+hard failure: raise immediately, no retry.
+
+**The assumption this breaks:** every prior failure mode this client
+handled (D12's "malformed response," D20's `additionalProperties` schema
+bug) was modeled as "the model either returns valid structured output or
+the call fails outright." This incident is neither — the model *partially*
+succeeded (3 of 4 fields correct, and correct in substance) and still got
+rejected wholesale by the API's strict-mode enforcement. "Strict" schema
+mode constrains generation; it does not make a schema violation impossible.
+
+**Alternatives:** treat this identically to every other hard failure (the
+prior behavior) — simple, but throws away a call that was one field away
+from valid, on a task cheap enough that a second attempt is clearly worth
+it; retry indefinitely until valid — risks masking a persistently broken
+prompt/schema mismatch behind silent retries, and burns cost/latency for no
+benefit if the failure is structural rather than a one-off sampling miss.
+
+**Fix:** `call_structured` now retries exactly once on `BadRequestError`
+(the API-level rejection), empty content, or a JSON/pydantic validation
+failure — three ways a generation can fail to become valid structured
+output, all handled by the same one-retry budget. The retry appends an
+explicit reminder to the prompt ("every field must be filled in as its own
+top-level field... never embed one field's value as text inside another
+field") rather than resending the identical prompt and hoping for different
+sampling luck. If the retry also fails, the client raises with both errors
+attached — still a hard failure per D12's principle, just no longer an
+overreaction to a single-field, single-generation mistake.
+
+**Testing:** `tests/ai/test_client.py` mocks the underlying `groq` SDK
+client directly (`client._client.chat.completions.create`) with a
+`BadRequestError`-then-valid-response sequence — no network, no API key —
+confirming the retry fires, the reminder is appended to the second attempt's
+prompt, only the successful attempt logs usage, and a persistent failure
+(both attempts invalid) still raises. This is a different test strategy
+from `FakeReasoningClient` (which tests *callers* of the client against the
+`StructuredReasoningClient` Protocol) — this tests the client's own retry
+logic, which sits below that Protocol boundary and can't be exercised
+through it.
+
+**Trade-offs:** one repair retry roughly doubles worst-case latency and
+cost for the ~10% of records that reach the AI layer at all — negligible in
+absolute terms at this dataset's scale, and strictly better than either
+failing on a recoverable mistake or retrying indefinitely on an
+unrecoverable one.

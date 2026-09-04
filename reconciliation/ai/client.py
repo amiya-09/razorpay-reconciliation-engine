@@ -34,6 +34,22 @@ DEFAULT_RATE_LIMIT_BACKOFF_SECONDS = 15.0
 # wait that can't actually resolve a daily cap. See D20.
 NON_RETRYABLE_DELAY_THRESHOLD_SECONDS = 120.0
 
+# One repair retry for a schema-invalid generation (D21): "strict" mode
+# constrains the model but doesn't make a schema violation impossible — the
+# model can fill some fields correctly and still produce output the API
+# itself rejects (e.g. a value that belongs in its own field written as
+# prose inside another field instead). One retry with an explicit reminder
+# resolves this in practice without masking a persistently broken prompt —
+# the second failure still raises with both errors attached.
+MAX_SCHEMA_REPAIR_RETRIES = 1
+_SCHEMA_REPAIR_REMINDER = (
+    "\n\nIMPORTANT: your previous response did not conform to the required "
+    "JSON schema. Every field defined in the schema must be filled in as its "
+    "own top-level field with the correct type — never embed one field's "
+    "value as text inside another field. Return only valid JSON matching "
+    "the schema exactly."
+)
+
 T = TypeVar("T", bound=BaseModel)
 
 
@@ -61,6 +77,40 @@ class GroqReasoningClient:
         self.call_log: list[AICallLog] = []
 
     def call_structured(self, system: str, user: str, output_format: type[T], max_tokens: int = 2048) -> T:
+        from groq import BadRequestError
+
+        last_error: Exception
+        for repair_attempt in range(MAX_SCHEMA_REPAIR_RETRIES + 1):
+            current_user = user if repair_attempt == 0 else user + _SCHEMA_REPAIR_REMINDER
+            try:
+                response = self._request_with_rate_limit_retry(system, current_user, output_format, max_tokens)
+            except BadRequestError as e:
+                # The API itself rejected the generation as schema-invalid —
+                # not a bug in our request shape (that's a permanent failure
+                # we'd already have hit on attempt 1 of a prior call), but a
+                # per-generation content mistake worth one retry (D21).
+                last_error = e
+                continue
+
+            content = response.choices[0].message.content if response.choices else None
+            if not content:
+                last_error = ValueError(
+                    f"LLM call returned no content conforming to {output_format.__name__}"
+                )
+                continue
+            try:
+                return output_format.model_validate(json.loads(content))
+            except (json.JSONDecodeError, ValidationError) as e:
+                last_error = e
+                continue
+
+        raise ValueError(
+            f"LLM call failed to produce valid {output_format.__name__} after "
+            f"{MAX_SCHEMA_REPAIR_RETRIES} repair retry — treated as a hard failure, "
+            f"not a silent pass-through (BUILD_BRIEF Section 4). Last error: {last_error}"
+        ) from last_error
+
+    def _request_with_rate_limit_retry(self, system: str, user: str, output_format: type[T], max_tokens: int):
         from groq import RateLimitError
 
         attempt = 0
@@ -108,16 +158,4 @@ class GroqReasoningClient:
             output_tokens=usage.completion_tokens if usage else 0,
             latency_ms=latency_ms,
         ))
-
-        content = response.choices[0].message.content if response.choices else None
-        if not content:
-            raise ValueError(
-                f"LLM call returned no content conforming to {output_format.__name__} "
-                "— treated as a hard failure, not a silent pass-through (BUILD_BRIEF Section 4)."
-            )
-        try:
-            return output_format.model_validate(json.loads(content))
-        except (json.JSONDecodeError, ValidationError) as e:
-            raise ValueError(
-                f"LLM call returned output that failed to parse/validate against {output_format.__name__}: {e}"
-            ) from e
+        return response
