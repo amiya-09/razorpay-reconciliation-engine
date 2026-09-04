@@ -53,7 +53,7 @@ generator, tests) runs with no key at all.
 
 ```bash
 source .venv/bin/activate
-python -m pytest                                      # 119 tests, 96% coverage, no key needed
+python -m pytest                                      # 124 tests, 1 skipped without a key, 98% coverage
 python -m reconciliation.dataset.generator             # regenerate data/raw/*.json (deterministic, seeded)
 PYTHONPATH=. python scripts/run_full_pipeline.py       # full report against the live API (needs GROQ_API_KEY)
 PYTHONPATH=. python scripts/run_consistency_check.py   # decision-variance check on a real ambiguous candidate
@@ -132,15 +132,17 @@ API, with results above.
 
 ```bash
 source .venv/bin/activate
-python -m pytest -q                                              # 119 tests, 1 skipped without GROQ_API_KEY
+python -m pytest -q                                              # 124 tests, 1 skipped without GROQ_API_KEY
 pip install pytest-cov                                            # optional, not in requirements.txt (dev-only check)
-python -m pytest --cov=reconciliation --cov-report=term-missing  # 96% line coverage
+python -m pytest --cov=reconciliation --cov-report=term-missing  # 98% line coverage
 ```
 
-Every remaining coverage gap is accounted for: the live-API code path in
-`ai/client.py` (verified separately by the credential-gated live test, by
-design — see decision log D13), and two explicitly-documented
-near-impossible defensive branches. Two real bugs were caught by the test
+Every remaining coverage gap is accounted for: two branches in
+`ai/client.py`'s real network path (the rate-limit retry loop, and the
+JSON/schema-validation-error branch inside the D21 repair-retry logic) that
+only fire under live API conditions the credential-gated live test and
+D21's mocked-SDK tests don't each individually reach, plus two
+explicitly-documented near-impossible defensive branches. Two real bugs were caught by the test
 suite itself during development (a UTR-truncation collision, a
 split-transaction false-duplicate flag) — see `docs/decision_log.md` D7,
 D10.

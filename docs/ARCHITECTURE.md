@@ -208,11 +208,13 @@ as a deliberate, separate verification step rather than a formality.
 
 ## 8. Testing strategy
 
-- **119 tests, 96% line coverage** on `reconciliation/`. Every gap in the
-  remaining 4% is accounted for: `ai/client.py`'s live-API code path
-  (verified separately by the credential-gated live test, not by unit
-  tests, per D13's design), and two explicitly-documented near-impossible
-  defensive branches.
+- **124 tests, 98% line coverage** on `reconciliation/`. Every gap in the
+  remaining 2% is accounted for: two branches in `ai/client.py`'s real
+  network path (the rate-limit retry loop and the JSON/schema-validation-
+  error branch inside D21's repair-retry logic) that only fire under live
+  API conditions the credential-gated live test and D21's mocked-SDK tests
+  don't each individually reach, and two explicitly-documented
+  near-impossible defensive branches.
 - **Fake-client testing for the AI layer** (`tests/ai/fake_client.py`): a
   `StructuredReasoningClient` implementation with a configurable responder,
   used to test every branch of the pipeline's decision logic (which groups
